@@ -18,16 +18,18 @@ export function ComputedStrip({ dismissal, x }: Props) {
         <Stat label="סכום פטור" value={formatILS(dismissal.exemptAmount)} />
         <Stat label="שיעור פטור (z)" value={formatPercent(dismissal.z, 1)} />
       </div>
-      <div className="composition" aria-hidden={x <= 0}>
-        <div className="composition__bar">
-          <span className="composition__exempt" style={{ flexGrow: dismissal.z }} />
-          <span className="composition__taxable" style={{ flexGrow: taxableShare }} />
+      {x > 0 ? (
+        <div className="composition">
+          <div className="composition__bar">
+            <span className="composition__exempt" style={{ flexGrow: dismissal.z }} />
+            <span className="composition__taxable" style={{ flexGrow: taxableShare }} />
+          </div>
+          <div className="composition__legend">
+            <span>פטור {formatPercent(dismissal.z, 1)}</span>
+            <span>חייב במס {formatPercent(taxableShare, 1)}</span>
+          </div>
         </div>
-        <div className="composition__legend">
-          <span>פטור {formatPercent(dismissal.z, 1)}</span>
-          <span>חייב במס {formatPercent(taxableShare, 1)}</span>
-        </div>
-      </div>
+      ) : null}
     </section>
   )
 }

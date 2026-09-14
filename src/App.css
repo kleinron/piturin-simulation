@@ -66,15 +66,15 @@ p {
 }
 
 .page {
-  width: min(1120px, calc(100% - 2rem));
+  width: min(1180px, calc(100% - 2rem));
   margin: 0 auto;
-  padding: 2rem 0 3.5rem;
+  padding: 1.35rem 0 2.75rem;
   display: grid;
-  gap: 1.1rem;
+  gap: 0.9rem;
 }
 
 .masthead {
-  padding: 0.4rem 0.2rem 0.6rem;
+  padding: 0.15rem 0.2rem 0.2rem;
 }
 
 .masthead__kicker,
@@ -90,8 +90,8 @@ p {
 }
 
 .masthead h1 {
-  margin: 0.25rem 0 0.7rem;
-  font-size: clamp(2rem, 4vw, 3.1rem);
+  margin: 0.15rem 0 0.45rem;
+  font-size: clamp(1.75rem, 3.4vw, 2.65rem);
 }
 
 .masthead__lede {
@@ -113,17 +113,23 @@ p {
 
 .inputs {
   display: grid;
-  gap: 1rem 1.25rem;
-  padding: 1.15rem 1.2rem 1.25rem;
+  gap: 0.85rem 1.1rem;
+  padding: 0.95rem 1.1rem 1.05rem;
 }
 
-@media (min-width: 840px) {
+@media (min-width: 720px) {
   .inputs {
     grid-template-columns: 1fr 1fr;
   }
 
   .advanced {
     grid-column: 1 / -1;
+  }
+}
+
+@media (min-width: 1020px) {
+  .inputs {
+    grid-template-columns: 1fr 1fr 1fr;
   }
 }
 
@@ -171,8 +177,9 @@ p {
   width: 100%;
   border: 0;
   background: transparent;
-  padding: 0.7rem 0;
+  padding: 0.55rem 0;
   color: var(--ink);
+  font-variant-numeric: tabular-nums;
 }
 
 .field input:focus {
@@ -216,7 +223,7 @@ p {
 }
 
 .computed {
-  padding: 1.1rem 1.2rem 1.2rem;
+  padding: 0.9rem 1.1rem 1rem;
 }
 
 .computed h2,
@@ -277,7 +284,7 @@ p {
 }
 
 .gap {
-  padding: 1.15rem 1.25rem 1.25rem;
+  padding: 0.85rem 1.1rem 1rem;
   text-align: center;
 }
 
@@ -301,7 +308,7 @@ p {
 
 .gap__amount {
   font-family: var(--serif);
-  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-size: clamp(1.7rem, 3.4vw, 2.4rem);
   font-weight: 700;
   font-variant-numeric: tabular-nums;
 }
@@ -315,7 +322,7 @@ p {
   display: grid;
   grid-template-columns: 1fr;
   gap: 1rem;
-  align-items: start;
+  align-items: stretch;
 }
 
 @media (min-width: 860px) {
@@ -325,10 +332,10 @@ p {
 }
 
 .path {
-  padding: 1.15rem 1.2rem 1.3rem;
+  padding: 1rem 1.1rem 1.15rem;
   display: grid;
-  gap: 1rem;
-  min-height: 100%;
+  gap: 0.85rem;
+  align-content: start;
 }
 
 .path--fund {
@@ -345,7 +352,7 @@ p {
 }
 
 .path__hero {
-  padding: 0.95rem 1rem;
+  padding: 0.8rem 0.9rem;
   border-radius: 14px;
 }
 
