@@ -241,7 +241,7 @@ p {
 
 @media (min-width: 720px) {
   .computed__grid {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 
@@ -346,6 +346,24 @@ p {
   border-top: 6px solid var(--market);
 }
 
+.path__heading {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem 0.6rem;
+}
+
+.path__badge {
+  display: inline-block;
+  padding: 0.12rem 0.55rem;
+  border-radius: 999px;
+  background: var(--fund);
+  color: #f4ead8;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
 .path__blurb {
   margin-top: 0.4rem;
   color: var(--ink-soft);
@@ -389,6 +407,12 @@ p {
 .path__nominal {
   color: var(--ink-soft);
   font-variant-numeric: tabular-nums;
+}
+
+.path__capital-note {
+  margin-top: 0.4rem;
+  font-size: 0.78rem;
+  color: var(--ink-soft);
 }
 
 .rate-slider {

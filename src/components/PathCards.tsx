@@ -12,6 +12,7 @@ function PathShell({
   kicker,
   title,
   blurb,
+  badge,
   real,
   nominal,
   children,
@@ -20,13 +21,17 @@ function PathShell({
   kicker: string
   title: string
   blurb: string
+  badge?: string
   real: number
   nominal: number
 }) {
   return (
     <article className={`path path--${tone}`}>
       <header>
-        <p className="path__kicker">{kicker}</p>
+        <div className="path__heading">
+          <p className="path__kicker">{kicker}</p>
+          {badge ? <span className="path__badge">{badge}</span> : null}
+        </div>
         <h2>{title}</h2>
         <p className="path__blurb">{blurb}</p>
       </header>
@@ -34,6 +39,7 @@ function PathShell({
         <p className="path__metric-label">שווי ריאלי ביום הפרישה</p>
         <p className="path__real">{formatILS(real)}</p>
         <p className="path__nominal">נומינלי: {formatILS(nominal)}</p>
+        <p className="path__capital-note">סכום הון ביום הפרישה — לא קצבה חודשית</p>
       </div>
       {children}
     </article>
@@ -52,6 +58,7 @@ export function Path1Card({ result, r, onChangeR }: Path1Props) {
       tone="fund"
       kicker="מסלול 1"
       title="השארה בקופה"
+      badge="פטור מס · מסלול מקל"
       blurb="מסלול מועדף: אין מס בפיטורים ואין מס בפרישה. כל היתרה נטו ביד."
       real={result.real}
       nominal={result.nominal}

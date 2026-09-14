@@ -17,6 +17,8 @@ export function ComputedStrip({ dismissal, x }: Props) {
         <Stat label="שנים עד פרישה (n)" value={formatYears(dismissal.n, 0)} />
         <Stat label="סכום פטור" value={formatILS(dismissal.exemptAmount)} />
         <Stat label="שיעור פטור (z)" value={formatPercent(dismissal.z, 1)} />
+        <Stat label="מס פיטורים" value={formatILS(dismissal.dismissalTax)} />
+        <Stat label="נטו מושקע" value={formatILS(dismissal.netInvested)} />
       </div>
       {x > 0 ? (
         <div className="composition">
